@@ -3,6 +3,7 @@ import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import './Signup.css'
 
 const Signup = () => {
     const { setUpReCaptcha } = useContext(AuthContext);
@@ -44,8 +45,9 @@ const Signup = () => {
         }
     }
     return (
-        <div>
-            <form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
+        <div className='container'>
+            <form className='form' onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
+                <label htmlFor="">Enter Your Phone Number</label>
                 <PhoneInput
                     style={{ width: "200px" }}
                     className=''
